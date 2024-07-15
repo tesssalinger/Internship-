@@ -1,0 +1,129 @@
+html{
+    background-color: #68b3fe;
+    color: #000000;
+    text-decoration: none;
+    font-family: "Happy Monkey", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+header{
+    text-align: center;
+}
+
+.header img{
+    width: 100px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+.title{
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.infoContainer{
+    display: flex;
+    gap: 3vw;
+    justify-content: center;
+}
+
+.infoItem{
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.infoName{
+    order: 1;
+}
+
+.infoTitle{
+    order: 2;
+}
+
+.infoHours{
+    order: 3;
+}
+
+main{
+    width: 70vw;
+    margin-left: 15vw;
+    padding-right: 15vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-top: 1rem;
+}
+
+article {
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+    flex-grow: 1;
+}
+
+article:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.tagContainer{
+    display: flex;
+    gap: 1rem;
+}
+
+.tagItem{
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 2rem;
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-style: italic;
+}
+
+.subtitle{
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.backHover:hover{
+    background-color: rgb(37, 37, 37);
+}
+
+@media screen and (max-width: 800px) {
+
+    .infoName {
+        order: 2;
+        width: 100%;
+    }
+
+    .infoTitle{
+        order: 1;
+        width: 100%;
+    }
+
+    .infoContainer{
+        flex-direction: column;
+    }
+
+    .scuff{
+        display: none;
+    }
+}
+
+/*
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+*/
