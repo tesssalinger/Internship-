@@ -1,147 +1,191 @@
-html {
+html{
     background-color: #68b3fe;
     color: #000000;
     text-decoration: none;
     font-family: "Happy Monkey", system-ui;
     font-weight: 400;
     font-style: normal;
+    
 }
-
-body {
-    background-color: transparent;
-    font-family: Arial, sans-serif;
+header{
     text-align: center;
-    margin: 0; /* Ensure there's no default body margin */
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px; /* Space below header */
+/* Using !important to override conflicting styles */
+.main img {
+    width: 20px !important;
+    height: 20px !important;
 }
 
-.title {
+.title{
     font-weight: 900;
     font-size: 3rem;
 }
 
-.infoContainer {
+.infoContainer{
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center child items */
-    gap: 1rem; /* Space between items */
-    color: #ffffff;
+    gap: 3vw;
+    justify-content: center;
 }
 
-.infoItem {
+.infoItem{
+    flex-grow: 1;
     font-weight: 500;
 }
 
-.aboutme {
-    border: 10px solid #b57411; /* Optional: add a border for visibility */
-    border-radius: 30px; /* Rounds the corners */
-    color: white;
-    background-color: #b57411;
-    padding: 20px; /* Added padding for better spacing */
-    max-width: 800px; /* Ensure it doesn't exceed max width */
-    margin: 0 auto; /* Center it on the page */
+.infoName{
+    order: 1;
 }
 
-main {
+.infoTitle{
+    order: 2;
+}
+
+.infoHours{
+    order: 3;
+}
+
+main{
+    width: 70vw;
+    margin-left: 15vw;
+    padding-right: 15vw;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center child elements */
-    padding: 1rem;
-    width: 90%; /* Make it responsive */
-    margin: 0 auto; /* Center the main content */
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-top: 1rem;
 }
 
 article {
-    background-color: #ffffff; /* Background color for articles */
-    border-radius: 1rem; /* Rounded corners */
-    padding: 1rem; /* Space inside each article */
-    width: 100%; /* Full width */
-    max-width: 400px; /* Limit max width for articles */
-    text-align: center; /* Center align text in articles */
-    margin: 1rem 0; /* Space between articles */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 1rem;
+    padding: 1rem; /* Adjust padding as needed */
+    width: calc(50% - 2rem); /* Adjust width or use percentage for responsiveness */
+    margin: 1rem; /* Adjust margin to create space between articles */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    position: relative; /* Ensure relative positioning for absolute child elements */
 }
 
-.tagContainer {
-    margin-top: 0.5rem; /* Space above tag container */
+article:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+article h1,
+article .tagContainer {
+    color: inherit; /* Ensure text color is inherited */
 }
 
 .tagItem {
     background-color: transparent;
-    color: rgb(6, 34, 75);
+    color: rgb(244, 244, 244);
     border-radius: 2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 1rem; /* Adjust padding for tag items */
     font-style: italic;
 }
 
-a {
+@media screen and (max-width: 800px) {
+    article {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Optional: Ensure hover does not affect other elements */
+article:not(:hover) .tagItem {
+    background-color: transparent;
+}
+
+
+a{
     color: inherit;
     text-decoration: inherit;
 }
 
-.backHover:hover {
-    color: #ffffff;
-    background-color: transparent;
+.tagContainer{
+    display: flex;
+    gap: 1rem;
 }
 
-.subtitle {
+.tagItem{
+    background-color: transparent;
+    color: rgb(6, 34, 75);
+    border-radius: 2rem;
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-style: italic;
+}
+
+.subtitle{
     font-size: 1.3rem;
     font-weight: 600;
     font-style: italic;
 }
 
-.link {
-    background-color: white;
-    padding: 1rem 1rem;
-    border-radius: 30px;
+.backHover:hover{
+    color: #ffffff;
+    background-color: transparent;
 }
 
-footer {
-    margin-top: 20px;
-}
-
-.rationale {
-    border: 10px solid #cea66a; /* Optional: add a border for visibility */
-    border-radius: 30px; /* Rounds the corners */
-    color: white;
-    background-color: #e5bd7f;
-    padding: 20px; /* Added padding for better spacing */
-    max-width: 800px; /* Ensure it doesn't exceed max width */
-    margin: 0 auto; /* Center it on the page */
-
-}
-
-
-.rationale p {
-    color: black;
-
-}
-
-/* Responsive styles */
 @media screen and (max-width: 800px) {
-    main {
-        width: 95vw; /* Adjust for smaller screens */
+
+    .infoName {
+        order: 2;
+        width: 100%;
     }
 
-    .infoContainer {
-        flex-direction: column; /* Stack items for smaller screens */
-        align-items: center; /* Center items */
+    .infoTitle{
+        order: 1;
+        width: 100%;
     }
 
-    .aboutme {
-        width: 90%; /* Adjust about me section width for mobile */
+    .infoContainer{
+        flex-direction: column;
     }
 
-    article {
-        width: 90vw; /* Ensure articles take more width on mobile */
-        margin: 0.5rem auto; /* Adjust margin for mobile */
+    .scuff{
+        display: none;
     }
+}
 
-    .tagItem {
-        width: 100%; /* Make tag items full width on smaller screens */
-    }
+/*
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+*/
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between stacked boxes */
+}
+
+.content-box {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: auto; /* Allow box height to adjust based on content */
+    overflow: hidden; /* Hide content that exceeds box dimensions */
+}
+
+.content-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0; /* Rounded top corners */
+    margin-bottom: 10px;
+}
+
+.content-box p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    margin: 0; /* Remove default margin to prevent extra space */
+    padding: 0; /* Remove default padding to prevent extra space */
 }
